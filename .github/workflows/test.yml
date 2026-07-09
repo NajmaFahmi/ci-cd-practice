@@ -1,0 +1,12 @@
+name: Latihan CI
+
+on: [push]
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cetak sapaan
+        run: echo "Hello CI"
+      - name: Jalankan Python
+        run: python3 -c "print(1 + 1)"
