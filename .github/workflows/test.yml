@@ -10,3 +10,7 @@ jobs:
         run: echo "Hello CI"
       - name: Jalankan Python
         run: python3 -c "print(1 + 1)"
+      - name: Cek secret (tidak akan terprint)
+        run: |
+          echo "Secret ada: ${{ secrets.API_KEY != '' }}"
+          echo "Nilai secret: ${{ secrets.API_KEY }}"
