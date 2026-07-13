@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.pyo
+landing_zone/
+*.csv
+!week_1/day3/retailco-etl/data/raw/sales.csv
+!week_1/day4/retailco-etl-db/data/raw/sales.csv
+!week_1/day5/warisan-rian-containerized/data/raw/sales_raw.csv
+!week_1/day5/warisan-rian/sales_raw.csv

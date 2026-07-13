@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: najma
+      POSTGRES_PASSWORD: rahasia
+      POSTGRES_DB: retailco
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U najma -d retailco"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pipeline:
+    build: .
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: najma
+      DB_PASSWORD: rahasia
+      DB_NAME: retailco
+    volumes:
+      - ./data:/app/data
+
+volumes:
+  postgres_data:
