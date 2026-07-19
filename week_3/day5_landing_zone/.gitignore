@@ -1,0 +1,4 @@
+local_data/
+*.parquet
+*.csv
+__pycache__/

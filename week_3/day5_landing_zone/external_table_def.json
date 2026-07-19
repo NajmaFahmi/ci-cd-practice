@@ -1,0 +1,10 @@
+{
+  "sourceFormat": "PARQUET",
+  "sourceUris": [
+    "gs://retailco-raw-najma/processed/*"
+  ],
+  "hivePartitioningOptions": {
+    "mode": "AUTO",
+    "sourceUriPrefix": "gs://retailco-raw-najma/processed/"
+  }
+}
